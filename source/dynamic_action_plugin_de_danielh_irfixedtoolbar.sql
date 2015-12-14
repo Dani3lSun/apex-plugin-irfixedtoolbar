@@ -28,7 +28,7 @@ end;
 prompt --application/shared_components/plugins/dynamic_action/de_danielh_irfixedtoolbar
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(21083664404181965818)
+ p_id=>wwv_flow_api.id(21089944910799325388)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'DE.DANIELH.IRFIXEDTOOLBAR'
 ,p_display_name=>'IR Fixed Toolbar'
@@ -37,7 +37,7 @@ wwv_flow_api.create_plugin(
 ,p_plsql_code=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '/*-------------------------------------',
 ' * IR Fixed Toolbar JS Functions',
-' * Version: 1.0 (14.12.2015)',
+' * Version: 1.1 (14.12.2015)',
 ' * Author:  Daniel Hochleitner',
 ' *-------------------------------------',
 '*/',
@@ -87,7 +87,9 @@ wwv_flow_api.create_plugin(
 '  -- build js string (Set dynamic style (top px) of IR column headers)',
 '  l_js_string := ''var ifSelector;'' || chr(10) ||',
 '                 ''function changeIRHeaderHeight_'' || l_region_static_id ||',
-'                 ''() {'' || chr(10) || ''    if ($("#'' || l_ir_datapanel_id ||',
+'                 ''() {'' || chr(10) || ''if($("#'' || l_ir_datapanel_id ||',
+'                 ''").find("div.t-fht-thead").length != 0) {'' || chr(10) ||',
+'                 ''    if ($("#'' || l_ir_datapanel_id ||',
 '                 '' .t-fht-thead").css("top") !== "auto") {'' || chr(10) ||',
 '                 ''      if (Number($("#'' || l_ir_datapanel_id ||',
 '                 '' .t-fht-thead").css("top").replace(/[^-\d\.]/g, "")) !== ifSelector) {'' ||',
@@ -108,7 +110,7 @@ wwv_flow_api.create_plugin(
 '                 '' .t-fht-thead").css("top","auto");'' || chr(10) ||',
 '                 ''         ifSelector = "auto";'' || chr(10) || ''    }'' ||',
 '                 chr(10) || ''    setTimeout(changeIRHeaderHeight_'' ||',
-'                 l_region_static_id || '', 50);'' || chr(10) || ''}'';',
+'                 l_region_static_id || '', 50);'' || chr(10) || ''}}'';',
 '  --',
 '  -- write inline JS code',
 '  apex_javascript.add_inline_code(p_code => l_js_string);',
@@ -130,7 +132,7 @@ wwv_flow_api.create_plugin(
 'This Dynamic Action Plugin is useful for setting an IR toolbar including the column header of all columns fixed to page when scrolling through the report.',
 'The toolbar including search field and action menu or IR toolbar buttons stays on top while a user scrolls through the IR results.',
 'Only use this plugin in combination with APEX 5 Universal Theme!'))
-,p_version_identifier=>'1.0'
+,p_version_identifier=>'1.1'
 ,p_about_url=>'https://github.com/Dani3lSun/apex-plugin-irfixedtoolbar'
 );
 end;

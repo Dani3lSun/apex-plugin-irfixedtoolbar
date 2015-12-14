@@ -4,6 +4,8 @@ The toolbar including search field and action menu or IR toolbar buttons stays o
 **Only use this plugin in combination with APEX 5 Universal Theme!**
 
 ##Changelog
+####1.1 - fixed error on empty IRs with no results
+
 ####1.0 - Initial Release
 
 ##Install

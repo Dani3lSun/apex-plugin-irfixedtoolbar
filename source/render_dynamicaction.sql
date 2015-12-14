@@ -1,6 +1,6 @@
 /*-------------------------------------
  * IR Fixed Toolbar JS Functions
- * Version: 1.0 (14.12.2015)
+ * Version: 1.1 (14.12.2015)
  * Author:  Daniel Hochleitner
  *-------------------------------------
 */
@@ -50,7 +50,9 @@ BEGIN
   -- build js string (Set dynamic style (top px) of IR column headers)
   l_js_string := 'var ifSelector;' || chr(10) ||
                  'function changeIRHeaderHeight_' || l_region_static_id ||
-                 '() {' || chr(10) || '    if ($("#' || l_ir_datapanel_id ||
+                 '() {' || chr(10) || 'if($("#' || l_ir_datapanel_id ||
+                 '").find("div.t-fht-thead").length != 0) {' || chr(10) ||
+                 '    if ($("#' || l_ir_datapanel_id ||
                  ' .t-fht-thead").css("top") !== "auto") {' || chr(10) ||
                  '      if (Number($("#' || l_ir_datapanel_id ||
                  ' .t-fht-thead").css("top").replace(/[^-\d\.]/g, "")) !== ifSelector) {' ||
@@ -71,7 +73,7 @@ BEGIN
                  ' .t-fht-thead").css("top","auto");' || chr(10) ||
                  '         ifSelector = "auto";' || chr(10) || '    }' ||
                  chr(10) || '    setTimeout(changeIRHeaderHeight_' ||
-                 l_region_static_id || ', 50);' || chr(10) || '}';
+                 l_region_static_id || ', 50);' || chr(10) || '}}';
   --
   -- write inline JS code
   apex_javascript.add_inline_code(p_code => l_js_string);
