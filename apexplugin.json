@@ -1,6 +1,7 @@
 {
   "name" : "IR Fixed Toolbar",
   "version" : "1.1",
+  "private" : "Y",
   "description" : "This plugin is useful for setting an IR toolbar including the column header of all columns fixed to page when scrolling through the report.",
   "keywords" : ["interactive report", "ir", "toolbar", "fixed"],
   "homepage" : "https://github.com/Dani3lSun/apex-plugin-irfixedtoolbar",
@@ -12,7 +13,9 @@
   "author" : {
     "name" : "Daniel Hochleitner",
     "email" : "daniel@danielh.de",
-    "url" : "http://blog.danielh.de/"
+    "url" : "https://danielhochleitner.de",
+    "twitter" : "Dani3lSun",
+    "donationUrl" : "https://www.paypal.me/DanielHochleitnerIT/3"
   },
   "repository" : {
     "type" : "git",
