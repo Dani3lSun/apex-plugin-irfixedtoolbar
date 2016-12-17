@@ -16,7 +16,7 @@ The toolbar including search field and action menu or IR toolbar buttons stays o
 - Affected Elements: Choose your Interactive Report Region
 
 ## Demo Application
-https://apex.oracle.com/pls/apex/f?p=57743:13
+https://apex.oracle.com/pls/apex/f?p=APEXPLUGIN
 
 ## Preview
 ![](https://github.com/Dani3lSun/apex-plugin-irfixedtoolbar/blob/master/preview.png)
